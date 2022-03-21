@@ -21,11 +21,10 @@ Example:
 > make test      #### Compile the tests
 > ./unit_tests -s   #### Start the tests, -s flag - full description of each case
 > make fulltest #### alternative for above, compile & run tests with full decription
-> make coverage  #### Generate a coverage report
 > make doc       #### Generate html documentation
 ```
 
-Things to remember:
+Things to remember during upgrading project to new task:
 * changes to CMakeLists.txt in the main folder with new files added, i.e.:
 ```cpp
 # --------------------------------------------------------------------------------
