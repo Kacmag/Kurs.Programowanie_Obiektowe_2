@@ -1,5 +1,6 @@
 #include "../tests/doctest/doctest.h"
 #include <iostream>
+#include <sstream>
 #include "example.h"
 #include "LZespolona.hh"
 #include "WyrazenieZesp.hh"
@@ -22,6 +23,7 @@ TEST_CASE("LZespolona - porownanie 1") {
     CHECK(x == y);
 }
 
+
 TEST_CASE("LZespolona - porownanie 2") {
     LZespolona x, y;
     
@@ -29,6 +31,18 @@ TEST_CASE("LZespolona - porownanie 2") {
     x.set_im() = 2;
 
     y.set_re() = 2;
+    y.set_im() = 2;
+   
+    CHECK(x == y);
+}
+
+TEST_CASE("LZespolona - porownanie 3") {
+    LZespolona x, y;
+    
+    x.set_re() = 3;
+    x.set_im() = 1;
+
+    y.set_re() = 4;
     y.set_im() = 2;
    
     CHECK(x == y);
@@ -47,6 +61,21 @@ TEST_CASE("LZespolona - dzielenie przez skalar - standardowe 1") {
     CHECK((x/t) == y);
 }
 
+TEST_CASE("LZespolona - dzielenie przez skalar - standardowe 2") {
+    LZespolona x, y;
+    double t = 2;
+    
+    x.set_re() = 3;
+    x.set_im() = 2;
+
+    y.set_re() = 3;
+    y.set_im() = 1;
+   
+    CHECK((x/t) == y);
+}
+
+
+
 TEST_CASE("LZespolona - dzielenie przez skalar - standardowe z przyblizeniem") {
     LZespolona x, y;
     double t = 3;
@@ -62,6 +91,21 @@ TEST_CASE("LZespolona - dzielenie przez skalar - standardowe z przyblizeniem") {
     CHECK((x/t) == y);
 }
 
+TEST_CASE("LZespolona - dzielenie przez skalar - standardowe z przyblizeniem 2") {
+    LZespolona x, y;
+    double t = 3;
+    
+    x.set_re() = 2;
+    x.set_im() = 3;
+
+    y.set_re() = 0.444;
+    y.set_im() = 0.444;
+    std::cout << (x/t) << std::endl;
+    std::cout << y << std::endl;
+    std::cout << ((x/t) == y) << std::endl;
+    CHECK((x/t) == y);
+}
+
 TEST_CASE("LZespolona - dzielenie przez skalar - zero") {
     LZespolona x;
     double t = 0;
@@ -71,7 +115,7 @@ TEST_CASE("LZespolona - dzielenie przez skalar - zero") {
  
    WARN_THROWS(x/t);
 }
-/*
+
 TEST_CASE("LZespolona - wyswietlanie standard") {
     LZespolona x;
    
@@ -83,6 +127,8 @@ TEST_CASE("LZespolona - wyswietlanie standard") {
     out << x;
     std::cout << out.str() << std::endl;
     CHECK( "(2.00+2.00i)" == out.str() );
+
+    
 }
 
 TEST_CASE("LZespolona - wyswietlanie zaokraglane") {
@@ -97,7 +143,7 @@ TEST_CASE("LZespolona - wyswietlanie zaokraglane") {
     std::cout << out.str() << std::endl;
     CHECK( "(0.67+0.67i)" == out.str() );
 }
-
+/*
 TEST_CASE("LZespolona - wczytywanie standard") {
     LZespolona x;
     
