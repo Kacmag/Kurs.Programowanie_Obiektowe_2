@@ -39,10 +39,16 @@ find_lto(CXX)
 # --------------------------------------------------------------------------------
 set(SOURCES          # All .cpp files in src/
     src/example.cpp
+    src/LZespolona.cpp
+    src/StatystykaTestu.cpp
+    src/WyrazenieZesp.cpp
 )
 set(TESTFILES        # All .cpp files in tests/
     tests/main.cpp
     tests/dummy.cpp
+    LZespolona.cpp
+    StatystykaTestu.cpp
+    WyrazenieZesp.cpp 
 )
 set(LIBRARY_NAME program)  # Default name for the library built from src/*.cpp (change if you wish)
 

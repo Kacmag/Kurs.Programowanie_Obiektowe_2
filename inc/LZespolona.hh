@@ -55,7 +55,7 @@ class  LZespolona {
 
 
 
-  bool operator == (  LZespolona  Skl2);
+  bool operator == (  LZespolona  Skl2) const;
   bool operator != (  LZespolona  Skl2);
 
 

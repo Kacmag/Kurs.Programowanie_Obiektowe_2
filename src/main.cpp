@@ -1,4 +1,14 @@
+#ifdef ENABLE_DOCTEST_IN_LIBRARY
+#define DOCTEST_CONFIG_IMPLEMENT
+#include "../tests/doctest/doctest.h"
+#endif
+
+#include "example.h"
+#include "exampleConfig.h"
+
+
 #include <iostream>
+
 #include <fstream>
 #include "WyrazenieZesp.hh"
 #include "StatystykaTestu.hh"

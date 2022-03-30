@@ -164,7 +164,7 @@ istream &operator>>(istream &Wej, LZespolona &Skl)
   return Wej;
 }
 
-bool LZespolona::operator == (  LZespolona  Skl2)
+bool LZespolona::operator == (  LZespolona  Skl2) const
 {
 
 
