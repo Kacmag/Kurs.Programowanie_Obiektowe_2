@@ -1,3 +1,4 @@
+*.pyi linguist-vendored
 *.py linguist-vendored
 Makefile linguist-vendored
 CMakeLists.txt linguist-vendored
